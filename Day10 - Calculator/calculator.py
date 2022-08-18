@@ -42,3 +42,6 @@ def calculator():
         if answer == "q":
             break
     print("Goodbye!")
+
+
+calculator()
