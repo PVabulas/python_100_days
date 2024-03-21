@@ -12,7 +12,9 @@ class Flashcards(Tk):
         self.back_word = ""
         self.flip_id = None
         try:
-            df = pd.read_csv("data/words_to_learn.csv", index_col=0)
+            df = pd.read_csv(
+                "../Archive/Day31 - Flashcards/data/words_to_learn.csv", index_col=0
+            )
         except FileNotFoundError:
             if data_file is None:
                 raise FileNotFoundError(
@@ -24,10 +26,14 @@ class Flashcards(Tk):
         self.back_title = df.columns[0]
         self.title("Flashy")
         self.config(bg=BACKGROUND_COLOR, padx=50, pady=50)
-        self.front = PhotoImage(file="images/card_front.png")
-        self.back = PhotoImage(file="images/card_back.png")
-        self.right = PhotoImage(file="images/right.png")
-        self.wrong = PhotoImage(file="images/wrong.png")
+        self.front = PhotoImage(
+            file="../Archive/Day31 - Flashcards/images/card_front.png"
+        )
+        self.back = PhotoImage(
+            file="../Archive/Day31 - Flashcards/images/card_back.png"
+        )
+        self.right = PhotoImage(file="../Archive/Day31 - Flashcards/images/right.png")
+        self.wrong = PhotoImage(file="../Archive/Day31 - Flashcards/images/wrong.png")
         self.canvas = Canvas(height=526, width=800, bg=BACKGROUND_COLOR)
         self.flashcard = self.canvas.create_image(400, 263)
         self.card_title = self.canvas.create_text(
